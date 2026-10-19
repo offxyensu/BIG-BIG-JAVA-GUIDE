@@ -1,0 +1,39 @@
+import java.util.Scanner;
+
+public class CompoundInterestCalc {
+
+    public static void main(String[] args){
+
+        Scanner scanner = new Scanner(System.in);
+
+        double principal;
+        double rate;
+        int timesCompounded;
+        int years;
+        double amount;
+
+        System.out.println("Enter the principal amount: ");
+        principal = scanner.nextDouble();
+
+        System.out.println("Enter the interest rate (%): ");
+        rate = scanner.nextDouble() / 100;
+                // /100 for percentage
+
+        System.out.println("Enter the amount of times compounded per year: ");
+        timesCompounded = scanner.nextInt();
+
+        System.out.println("Enter the emount of years: ");
+        years = scanner.nextInt();
+
+        amount = principal * Math.pow(1 + rate / timesCompounded, timesCompounded * years);
+
+        System.out.printf("The amount after " + years + " year/s is %.2f ", amount);
+
+
+
+
+
+        scanner.close();
+
+    }
+}
